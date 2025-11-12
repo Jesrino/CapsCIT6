@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
+import Header from '../components/header'
 
 const Navbar = () => {
   const navigate = useNavigate()
-  const [showMenu, setShowMenu] = useState(false)
+  // DEBUG: open dropdown by default so it's visible for inspection. Set to false to restore normal behaviour.
+  const [showMenu, setShowMenu] = useState(true)
   const [token, setToken] = useState(true)
   const menuRef = useRef(null)
 
@@ -24,9 +26,9 @@ const Navbar = () => {
   }
 
   return (
-    <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-gray-400'>
-      <img className='w-44 cursor-pointer' src={assets.logo} alt='Dents City Logo' />
-      <ul className='hidden md:flex item-start gap-5 font-medium'>
+    <div className='flex items-center justify-between text-xs sm:text-sm py-4 mb-5 border-b border-gray-400 px-2 sm:px-4'>
+      <img className='w-32 sm:w-44 cursor-pointer' src={assets.logo} alt='Dents City Logo' />
+      <ul className='flex item-start gap-2 sm:gap-5 font-medium flex-wrap'>
         <NavLink to='/' className={({ isActive }) => isActive ? 'active' : ''}>
           <li className='py-1'>Home</li>
           <hr className='border-none outline-none h-0.5 bg-primary w-3/5 m-auto' />
@@ -49,17 +51,17 @@ const Navbar = () => {
             token
             ? (
               <div className='relative' ref={menuRef}>
-                <div className='flex items-center gap-2 cursor-pointer' onClick={() => setShowMenu(s => !s)} aria-expanded={showMenu}>
+                <div className='flex items-center gap-2 cursor-pointer' onClick={() => { console.log('avatar clicked, showMenu=', showMenu); setShowMenu(s => !s); }} aria-expanded={showMenu}>
                   <img className='w-8 h-8 rounded-full' src={assets.profile_pic} alt="profile" />
                   <img className='w-2.5' src={assets.dropdown_icon} alt="" />
                 </div>
 
-                {/* dropdown - click toggles visibility */}
-                <div className={(showMenu ? 'block' : 'hidden') + ' absolute top-full left-0 mt-2 z-20'}>
-                  <div className='w-48 bg-stone-100 rounded-md shadow-md flex flex-col gap-3 p-3'>
-                    <button onClick={() => navigate('/myprofile')} className='text-left hover:text-black text-gray-700 py-1'>My Profile</button>
-                    <button onClick={() => navigate('/myappointments')} className='text-left hover:text-black text-gray-700 py-1'>My Appointments</button>
-                    <button onClick={() => setToken(false)} className='text-left hover:text-black text-gray-700 py-1'>Logout</button>
+                {/* dropdown - click toggles visibility. Fixed positioning for mobile screens */}
+                <div className={(showMenu ? 'block' : 'hidden') + ' absolute top-full right-0 mt-2 z-50 w-48'}>
+                  <div className='bg-white border border-red-300 rounded-md shadow-lg flex flex-col gap-3 p-3'>
+                    <button onClick={() => navigate('/myprofile')} className='text-left hover:text-black text-gray-700 py-1 text-sm'>My Profile</button>
+                    <button onClick={() => navigate('/myappointments')} className='text-left hover:text-black text-gray-700 py-1 text-sm'>My Appointments</button>
+                    <button onClick={() => setToken(false)} className='text-left hover:text-black text-gray-700 py-1 text-sm'>Logout</button>
                   </div>
                 </div>
               </div>

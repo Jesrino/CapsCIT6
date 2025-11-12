@@ -1,11 +1,17 @@
-import React from 'react'
 
-const home = () => {
+import React from 'react'
+import Header from '../components/header'
+import Specialitymenu from '../components/specialitymenu'
+import TopDoctor from '../components/topdoctor'
+
+const Home = () => {
   return (
     <div>
-   <Header/>
+      <Header />
+      <Specialitymenu />
+      <TopDoctor />
     </div>
   )
 }
 
-export default home
+export default Home
