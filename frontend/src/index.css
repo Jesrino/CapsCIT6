@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+a hr {
+  display: none;
+}
+
+.active hr {
+  display: block !important;
+}
+
+.active li {
+  color: #5f6fff;
+}
+
+a:hover hr {
+  display: block !important;
+}
+
+a:hover li {
+  color: #5f6fff;
+}
