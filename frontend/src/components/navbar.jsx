@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
-import Header from '../components/header'
+import Header from '../components/header' 
 
 const Navbar = () => {
   const navigate = useNavigate()

@@ -30,12 +30,12 @@ import doc12 from './doc12.png'
 import doc13 from './doc13.png'
 import doc14 from './doc14.png'
 import doc15 from './doc15.png'
-import Dermatologist from './DentalBraces.svg'
-import Gastroenterologist from './DentalImplant.svg'
-import General_physician from './RemovabaleDentures.svg'
-import Gynecologist from './DentalCleaning.svg'
-import Neurologist from './ToothFillings.svg'
-import Pediatricians from './ToothExtraction.svg'
+import DentalBraces from './DentalBraces.svg'
+import DentalImplant from './DentalImplant.svg'
+import RemovabaleDentures from './RemovabaleDentures.svg'
+import DentalCleaning from './DentalCleaning.svg'
+import ToothFillings from './ToothFillings.svg'
+import ToothExtraction from './ToothExtraction.svg'
 
 
 export const assets = {
