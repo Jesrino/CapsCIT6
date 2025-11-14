@@ -23,7 +23,7 @@ const App = () => {
       <Route  path='/contact' element={<Contact />}  />
       <Route  path='/myprofile' element={<Myprofile />}  />
       <Route  path='/myappointments' element={<MyAppointments />}  />
-      <Route  path='/appointment/:serID' element={<Appointment />}  />
+      <Route  path='/appointment/:docID' element={<Appointment />}  />
 
     </Routes>
 

@@ -20,3 +20,4 @@ const Specialitymenu = () => {
 }
 
 export default Specialitymenu
+
